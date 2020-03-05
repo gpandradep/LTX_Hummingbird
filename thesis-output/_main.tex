@@ -1,0 +1,273 @@
+% Plantilla LTXHummingbird, para tesis del Instituto de Ecología A.C. (INECOL), optimizada para Rmarkdown y bookdown
+
+%% Esta plantilla esta basada en el formato reedthesis utilizando la paqueteria Thesisdown
+
+%% Preamble
+%%
+% \documentclass{<something>} must begin each LaTeX document
+\documentclass[12pt,twoside]{reedthesis}
+% Packages are extensions to the basic LaTeX functions. Whatever you
+% want to typeset, there is probably a package out there for it.
+% Chemistry (chemtex), screenplays, you name it.
+% Check out CTAN to see: http://www.ctan.org/
+%%
+\usepackage[normalem]{ulem}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage{setspace}\doublespacing
+\usepackage{float}
+\usepackage{graphicx,latexsym}
+\usepackage{amsmath}
+\usepackage{amssymb,amsthm}
+\usepackage{longtable,booktabs,setspace}
+\usepackage[hyphens]{url}
+% Added by CII
+\usepackage{lmodern}
+\usepackage{float}
+\floatplacement{figure}{H}
+% End of CII addition
+\usepackage{rotating}
+\usepackage[hidelinks]{hyperref}
+\usepackage[bottom, flushmargin]{footmisc}
+
+% Spanish
+\ifxetex
+  \usepackage{polyglossia}
+  \setmainlanguage{spanish}
+ 
+  % Tabla en lugar de cuadro
+  \addto\captionsspanish{%
+  \renewcommand{\tablename}{Tabla}%
+  \renewcommand{\listtablename}{Índice de tablas}%
+  }
+ 
+\else
+  \usepackage[spanish,es-tabla]{babel}
+  % Para los acentos (xelatex no lo necesita)
+  \usepackage[utf8]{inputenc} 
+  \usepackage[T1]{fontenc}
+  \usepackage{lmodern}
+\fi
+
+% Next line commented out by CII
+\usepackage{natbib}
+% Comment out the natbib line above and uncomment the following two lines to use the new
+% biblatex-chicago style, for Chicago A. Also make some changes at the end where the
+% bibliography is included.
+%\usepackage{biblatex-chicago}
+%\bibliography{thesis}
+
+\renewcommand{\baselinestretch}{1.5}
+% Added by CII (Thanks, Hadley!)
+% Use ref for internal links
+\renewcommand{\hyperref}[2][???]{\autoref{#1}}
+\def\chapterautorefname{Capítulo}
+\def\sectionautorefname{Sección}
+\def\subsectionautorefname{Subsección}
+% End of CII addition
+
+
+% \usepackage{times} % other fonts are available like times, bookman, charter, palatino
+% Syntax highlighting #22
+  \usepackage{color}
+  \usepackage{fancyvrb}
+  \newcommand{\VerbBar}{|}
+  \newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+  \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+  % Add ',fontsize=\small' for more characters per line
+  \usepackage{framed}
+  \definecolor{shadecolor}{RGB}{248,248,248}
+  \newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+  \newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+  \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+  \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+  \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+  \newcommand{\BuiltInTok}[1]{#1}
+  \newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+  \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+  \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+  \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+  \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+  \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+  \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+  \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+  \newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+  \newcommand{\ExtensionTok}[1]{#1}
+  \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+  \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+  \newcommand{\ImportTok}[1]{#1}
+  \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+  \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+  \newcommand{\NormalTok}[1]{#1}
+  \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+  \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+  \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+  \newcommand{\RegionMarkerTok}[1]{#1}
+  \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+  \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+  \newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+  \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+  \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+  \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+
+% To pass between YAML and LaTeX the dollar signs are added by CII
+\title{Tu título}
+\author{Estudiante no promedio}
+\date{2020-03-05}
+\advisor{El mejor doctor}
+\newcommand{\institution}{}
+\newcommand{\type}{Algo en Ciencias}
+%If you have two advisors for some reason, you can use the following
+% Uncommented out by CII
+% End of CII addition
+
+% Added by CII
+%%% Copied from knitr
+%% maxwidth is the original width if it's less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+
+\renewcommand{\contentsname}{Índice general}
+% End of CII addition
+
+\setlength{\parskip}{0pt}
+
+% Added by CII
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\Acknowledgements{
+No olviden agradecer a la beca
+}
+
+\Resumen{
+Probablemente haga un resumen al final de mi tesis
+}
+
+\Dedication{
+Cada quien con su cada cual
+}
+
+
+\Abstract{
+
+}
+
+% End of CII addition
+%%
+%% End Preamble
+%%
+%
+\begin{document}
+
+% Everything below added by CII
+% % \maketitle
+%
+\frontmatter % this stuff will be roman-numbered
+\pagestyle{empty} % this removes page numbers from the frontmatter
+\begin{flushleft}
+  
+  \medskip
+  \medskip
+  \includegraphics[width=0.60\textwidth]{Inecol.jpeg}\\\vspace {3.cm} 
+  {\Large{\bf Tu título}}\\\vspace{3.cm} 
+  TESIS QUE PRESENTA \textit{\textbf{Estudiante no promedio}}\\
+  PARA OBTENER EL GRADO DE \textit{\textbf{Algo en Ciencias}}\\\vspace{2.cm} 
+  \medskip
+  \medskip
+  
+  Xalapa, Veracrúz, México 2020-03-05
+  
+-------------------------------------------------  
+\end{flushleft}
+  \begin{dedication}
+    Cada quien con su cada cual
+  \end{dedication}
+  \begin{acknowledgements}
+    No olviden agradecer a la beca
+  \end{acknowledgements}
+%%%%%%
+\newpage
+\thispagestyle{empty}
+\hypertarget{declaration-of-authorship}{%
+\section*{Declaración}\label{declaration-of-authorship}}
+
+Exepto cuando es explícitamente indicado en el texto, el trabajo de investigacion contenido en esta tesis fue efectuado por Estudiante no promedio como estudiante de la carrera Algo en Ciencias entre septiembre de 2019 y agosto del 2023, bajo la supervisión del DR El mejor doctor
+\vspace{1cm}
+Las investigaciones reportadas en esta tesis no han sido utilizadas anteriormente para obtener otros grados académicos, niserán utilizados para tales fines en el futuro
+
+
+México, 
+\vspace{3cm}
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+
+  \begin{resumen}
+    Probablemente haga un resumen al final de mi tesis
+  \end{resumen}
+
+
+  \setcounter{tocdepth}{2}
+  \tableofcontents
+
+  \listoftables
+
+  \listoffigures
+
+\mainmatter % here the regular arabic numbering starts
+\pagestyle{fancyplain} % turns page numbering back on
+
+\hypertarget{introducciuxf3n-y-marco-teuxf3rico}{%
+\chapter{Introducción y marco teórico}\label{introducciuxf3n-y-marco-teuxf3rico}}
+
+\hypertarget{introducciuxf3n-general}{%
+\section{Introducción general}\label{introducciuxf3n-general}}
+
+Todo el choro necesario para justificar un trabajo, lo más fácil es decir que no se ha trabajado en México.
+
+\hypertarget{marco-teuxf3rico}{%
+\section{Marco teórico}\label{marco-teuxf3rico}}
+
+\hypertarget{teoruxeda-x}{%
+\subsection{Teoría X}\label{teoruxeda-x}}
+
+Me baso en lo que dijeron en el papiro que leí
+
+\hypertarget{bibliografuxeda}{%
+\section{Bibliografía}\label{bibliografuxeda}}
+
+\hypertarget{refs}{}
+
+\hypertarget{tuxedtulo-del-capuxedtulo}{%
+\chapter{Título del capítulo}\label{tuxedtulo-del-capuxedtulo}}
+
+\hypertarget{introducciuxf3n}{%
+\section{Introducción}\label{introducciuxf3n}}
+
+Este es el papiro que nunca terminaré
+
+\hypertarget{metodologuxeda}{%
+\section{Metodología}\label{metodologuxeda}}
+
+\hypertarget{resultados}{%
+\section{Resultados}\label{resultados}}
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{summary}\NormalTok{(cars)}
+\end{Highlighting}
+\end{Shaded}
+\begin{verbatim}
+##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00
+\end{verbatim}
+\hypertarget{discusiuxf3n}{%
+\section{Discusión}\label{discusiuxf3n}}
+
+
+% Index?
+
+\end{document}

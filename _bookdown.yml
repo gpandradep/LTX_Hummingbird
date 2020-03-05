@@ -7,8 +7,9 @@ rmd_files:
   [
     "index.Rmd",
     "01-intro.Rmd"
-      #, "02-chap1"
-      #,"03-chap2"]
+      , "02-chap2.Rmd"
+      #,"03-chap2"
+      ]
 
 #download: [["GAP.pdf", "PDF"]]
 
