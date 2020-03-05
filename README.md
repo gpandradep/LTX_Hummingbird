@@ -20,7 +20,7 @@ Para usar la plantilla simplemente descarga o clona el repositorio en tu computa
 # Funcionamiento y contenido
 Para generar un documento pdf basta con abrir el archivo `index.Rmd` y apretar el botón `knit`. El documento resultado se alojará en la carpeta de thesis_output.
 
-En la mayoría de los casos es cada vez que avanzamos en los tutoriales es necesario entregar un documento en `word` para que los asesores realicen los comentarios al documento. Son muy pocos los asesores que "admiten" la entrega de un PDF para una revisión, y aun menos los que pueden trabajar en github, que por cierto para mi es la forma más natural de trabajar un documento colaborativo generado en R. ¿Que hacer en esta instancia? Generar un PDF y luego pasarlo a word es una tarea muy desgastante. Pero no se preocupen, existe una función que nos permite generar un documento de word de cada capítulo y se ejecuta de manera muy sencilla. 
+En la mayoría de los casos cada vez que avanzamos en los tutoriales es necesario entregar un documento en `word` para que los asesores realicen los comentarios. Son muy pocos los asesores que "admiten" la entrega de un PDF para una revisión, y aun menos los que pueden trabajar en github, que por cierto para mi es la forma más natural de trabajar un documento colaborativo generado en R. ¿Que hacer en esta instancia? Generar un PDF y luego pasarlo a word es una tarea muy desgastante. Pero no se preocupen, existe una función que nos permite generar un documento de word de cada capítulo y se ejecuta de manera muy sencilla. 
 
 ```{r}
 bookdown::preview_chapter("01-chap2.Rmd",
@@ -54,7 +54,7 @@ Es el archivo que especifica el estilo de la bibliografía. Para descargar más 
 Son las carpetas donde se almacenan las imágenes y los datos que se utilizan en los diferentes capítulos.
 
 ### detalles
- Para más detalles sobre los componentes y las funcionalidades de bookdown, es recomendadisimo ojear el libro de [bookdown book](https://bookdown.org/yihui/bookdown/) for details on cross-referencing items using R Markdown.
+ Para más detalles sobre los componentes y las funcionalidades de bookdown, es recomendadisimo ojear el libro de [bookdown book](https://bookdown.org/yihui/bookdown/).
  
- # Retro-alimentación
-Soy un novato en Latex y un entusiasta de R y Rmarkdown, por lo cual hay muchas cosas que voy descubriendo y mejorando sobre la marcha. Para mí y en general para los que comenzamos a escribir las tesis en esta herramienta, sería de mucha ayuda toda la retro-alimentación posible de personas que manejan el tema o incluso de gente como yo, que esta aprendiendo sobre la marcha. La idea final es generar una plantilla solida que sirva de base a estudiantes del INECOl que quieran hacer su tesis en Rmarkdown o incluso a aquellos a quienes los obliguen a hacerlo.
+# Retro-alimentación
+Soy un novato en Latex y un entusiasta de R y Rmarkdown, por lo cual hay muchas cosas que voy descubriendo y mejorando sobre la marcha. Para mí y en general para los que comenzamos a escribir las tesis en esta herramienta, sería de mucha ayuda toda la retro-alimentación posible de personas que manejan el tema o incluso de gente como yo, que esta aprendiendo sobre la marcha. La idea final es generar una plantilla solida que sirva de base a estudiantes del INECOl que quieran hacer su tesis en Rmarkdown o incluso a aquellos a quienes los obliguen a hacerlo (no es cierto) .
