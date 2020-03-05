@@ -1,0 +1,17 @@
+new_session: yes
+delete_merged_file: yes
+
+output_dir: "thesis-output"
+
+rmd_files:
+  [
+    "index.Rmd",
+    "01-intro.Rmd"
+      #, "02-chap1"
+      #,"03-chap2"]
+
+#download: [["GAP.pdf", "PDF"]]
+
+language:
+  ui:
+    chapter_name: "Capítulo "

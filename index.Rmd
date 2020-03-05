@@ -1,0 +1,46 @@
+---
+# Información básica
+author: 'Gabriel Patricio Andrade Ponce'
+date: '`r Sys.Date()`'
+type: 'Doctorado en Ciencias'
+title: '¿Qué hay detras de la co-ocurrencia de mamíferos carnívoros?: un enfoque de fototrampeo y modelos jerárquicos'
+advisor: "Salvador Mandunajo Rodríguez"
+
+# Opciones de render
+knit: "bookdown::render_book"
+site: bookdown::bookdown_site
+output: 
+  thesisdown::thesis_pdf: default
+  # thesisdown::thesis_gitbook: default
+  # thesisdown::thesis_word: default
+  # thesisdown::thesis_epub: default
+
+# Información adicional
+## No entiendo por que no funciona cuando las comento, por ahora toca dejarlas.
+acknowledgements: |
+  `r if(knitr:::is_latex_output()) paste(readLines("prelim/00-acknowledge.Rmd"), collapse = '\n  ')`
+dedication: |
+  `r if(knitr:::is_latex_output()) paste(readLines("prelim/00-dedication.Rmd"), collapse = '\n  ')`
+lot: true
+lof: true
+resumen: |
+  `r if(knitr:::is_latex_output()) paste(readLines("prelim/00-abstract.Rmd"), collapse = '\n  ')`
+
+
+#  Bibliografía
+bibliography: references.bib
+# Stilo
+csl: csl/apa.csl
+
+---
+
+```{r include_packages, include = FALSE}
+library("thesisdown")
+```
+
+<!--Plantilla LTXHummingbird, para tesis del Instituto de Ecología A.C. (INECOL), optimizada para Rmarkdown y bookdown
+
+ Esta plantilla esta basada en el formato reedthesis utilizando la paqueteria Thesisdown-->
+
+
+

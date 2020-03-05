@@ -1,0 +1,229 @@
+% Plantilla LTXHummingbird, para tesis del Instituto de Ecología A.C. (INECOL), optimizada para Rmarkdown y bookdown
+
+%% Esta plantilla esta basada en el formato reedthesis utilizando la paqueteria Thesisdown
+
+%% Preamble
+%%
+% \documentclass{<something>} must begin each LaTeX document
+\documentclass[12pt,twoside]{reedthesis}
+% Packages are extensions to the basic LaTeX functions. Whatever you
+% want to typeset, there is probably a package out there for it.
+% Chemistry (chemtex), screenplays, you name it.
+% Check out CTAN to see: http://www.ctan.org/
+%%
+\usepackage[normalem]{ulem}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage{setspace}\doublespacing
+\usepackage{float}
+\usepackage{graphicx,latexsym}
+\usepackage{amsmath}
+\usepackage{amssymb,amsthm}
+\usepackage{longtable,booktabs,setspace}
+\usepackage[hyphens]{url}
+% Added by CII
+\usepackage{lmodern}
+\usepackage{float}
+\floatplacement{figure}{H}
+% End of CII addition
+\usepackage{rotating}
+\usepackage[hidelinks]{hyperref}
+\usepackage[bottom, flushmargin]{footmisc}
+
+% Spanish
+\ifxetex
+  \usepackage{polyglossia}
+  \setmainlanguage{spanish}
+ 
+  % Tabla en lugar de cuadro
+  \addto\captionsspanish{%
+  \renewcommand{\tablename}{Tabla}%
+  \renewcommand{\listtablename}{Índice de tablas}%
+  }
+ 
+\else
+  \usepackage[spanish,es-tabla]{babel}
+  % Para los acentos (xelatex no lo necesita)
+  \usepackage[utf8]{inputenc} 
+  \usepackage[T1]{fontenc}
+  \usepackage{lmodern}
+\fi
+
+% Next line commented out by CII
+\usepackage{natbib}
+% Comment out the natbib line above and uncomment the following two lines to use the new
+% biblatex-chicago style, for Chicago A. Also make some changes at the end where the
+% bibliography is included.
+%\usepackage{biblatex-chicago}
+%\bibliography{thesis}
+
+\renewcommand{\baselinestretch}{1.5}
+% Added by CII (Thanks, Hadley!)
+% Use ref for internal links
+\renewcommand{\hyperref}[2][???]{\autoref{#1}}
+\def\chapterautorefname{Capítulo}
+\def\sectionautorefname{Sección}
+\def\subsectionautorefname{Subsección}
+% End of CII addition
+
+
+% \usepackage{times} % other fonts are available like times, bookman, charter, palatino
+% Syntax highlighting #22
+$if(highlighting-macros)$
+  $highlighting-macros$
+$endif$
+
+% To pass between YAML and LaTeX the dollar signs are added by CII
+\title{$title$}
+\author{$author$}
+\date{$date$}
+\advisor{$advisor$}
+\newcommand{\institution}{$institution$}
+\newcommand{\type}{$type$}
+%If you have two advisors for some reason, you can use the following
+% Uncommented out by CII
+$if(altadvisor)$
+\altadvisor{$altadvisor$}
+$endif$
+% End of CII addition
+
+% Added by CII
+%%% Copied from knitr
+%% maxwidth is the original width if it's less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+
+\renewcommand{\contentsname}{Índice general}
+% End of CII addition
+
+\setlength{\parskip}{0pt}
+
+% Added by CII
+$if(space_between_paragraphs)$
+  %\setlength{\parskip}{\baselineskip}
+  \usepackage[parfill]{parskip}
+$endif$
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\Acknowledgements{
+$acknowledgements$
+}
+
+\Resumen{
+$resumen$
+}
+
+\Dedication{
+$dedication$
+}
+
+
+\Abstract{
+$abstract$
+}
+
+$for(header-includes)$
+	$header-includes$
+$endfor$
+% End of CII addition
+%%
+%% End Preamble
+%%
+%
+
+\begin{document}
+
+% Everything below added by CII
+%$if(title)$
+ % \maketitle
+%$endif$
+
+\frontmatter % this stuff will be roman-numbered
+\pagestyle{empty} % this removes page numbers from the frontmatter
+
+\begin{flushleft}
+  
+  \medskip
+  \medskip
+  \includegraphics[width=0.60\textwidth]{Inecol.jpeg}\\\vspace {3.cm} 
+  {\Large{\bf $title$}}\\\vspace{3.cm} 
+  TESIS QUE PRESENTA \textit{\textbf{$author$}}\\
+  PARA OBTENER EL GRADO DE \textit{\textbf{$type$}}\\\vspace{2.cm} 
+  \medskip
+  \medskip
+  
+  Xalapa, Veracrúz, México $date$
+  
+-------------------------------------------------  
+\end{flushleft}
+
+
+$if(dedication)$
+  \begin{dedication}
+    $dedication$
+  \end{dedication}
+$endif$
+
+$if(acknowledgements)$
+  \begin{acknowledgements}
+    $acknowledgements$
+  \end{acknowledgements}
+$endif$
+%%%%%%
+\newpage
+\thispagestyle{empty}
+\hypertarget{declaration-of-authorship}{%
+\section*{Declaración}\label{declaration-of-authorship}}
+
+Exepto cuando es explícitamente indicado en el texto, el trabajo de investigacion contenido en esta tesis fue efectuado por $author$ como estudiante de la carrera $type$ entre septiembre de 2019 y agosto del 2023, bajo la supervisión del DR $advisor$
+\vspace{1cm}
+Las investigaciones reportadas en esta tesis no han sido utilizadas anteriormente para obtener otros grados académicos, niserán utilizados para tales fines en el futuro
+
+
+México, 
+\vspace{3cm}
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+
+
+$if(resumen)$
+  \begin{resumen}
+    $resumen$
+  \end{resumen}
+$endif$
+
+$if(abstract)$
+  \begin{abstract}
+    $abstract$
+  \end{abstract}
+$endif$
+
+$if(preface)$
+  \begin{preface}
+    $preface$
+  \end{preface}
+$endif$
+
+$if(toc)$
+  \setcounter{tocdepth}{$toc-depth$}
+  \tableofcontents
+$endif$
+
+$if(lot)$
+  \listoftables
+$endif$
+
+$if(lof)$
+  \listoffigures
+$endif$
+
+\mainmatter % here the regular arabic numbering starts
+\pagestyle{fancyplain} % turns page numbering back on
+
+$body$
+
+
+% Index?
+
+\end{document}
+
