@@ -1,10 +1,10 @@
 ---
 # Información básica
-author: 'Gabriel Patricio Andrade Ponce'
+author: 'Estudiante no promedio'
 date: '`r Sys.Date()`'
-type: 'Doctorado en Ciencias'
-title: '¿Qué hay detras de la co-ocurrencia de mamíferos carnívoros?: un enfoque de fototrampeo y modelos jerárquicos'
-advisor: "Salvador Mandunajo Rodríguez"
+type: 'Algo en Ciencias'
+title: 'Tu título'
+advisor: "El mejor doctor"
 
 # Opciones de render
 knit: "bookdown::render_book"
